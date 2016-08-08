@@ -1,8 +1,10 @@
 development:
   adapter: postgresql
+  encoding: utf8
+  # database: inventory_development
   host: localhost
-  username: user
-  database: app-dev
+  pool: 5
+  timeout: 5000
 
 test:
   adapter: postgresql
