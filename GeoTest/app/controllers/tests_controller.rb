@@ -5,6 +5,7 @@ class TestsController < ApplicationController
   # GET /tests.json
   def index
     @tests = Test.all
+    # @venues = Venue.near('Omaha, NE, US', 20)
   end
 
   # GET /tests/1
@@ -25,7 +26,7 @@ class TestsController < ApplicationController
   # POST /tests.json
   def create
     @test = Test.new(test_params)
-
+    @location = request.location
     respond_to do |format|
       if @test.save
         format.html { redirect_to @test, notice: 'Test was successfully created.' }
